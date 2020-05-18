@@ -8,13 +8,23 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <Spinner
+        android:id="@+id/planets_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="93dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <android.support.design.widget.TabLayout
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        app:tabTextColor="#fafafa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:tabTextColor="#fafafa"
         tools:layout_editor_absoluteY="1dp">
 
         <android.support.design.widget.TabItem
@@ -37,7 +47,6 @@
             android:layout_height="wrap_content"
             android:text="Nations" />
     </android.support.design.widget.TabLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
