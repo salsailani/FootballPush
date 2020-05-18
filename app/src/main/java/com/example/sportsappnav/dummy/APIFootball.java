@@ -1,7 +1,7 @@
 package com.example.sportsappnav.dummy;
 import okhttp3.OkHttpClient;
 
-public class App
+public class APIFootball
 {
     public static void main( String[] args ) throws Exception
     {
