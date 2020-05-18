@@ -17,6 +17,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ImageButton;
+import android.content.Intent;
+import android.view.View.OnClickListener;
+
 
 
 
@@ -50,7 +55,17 @@ public class MainActivity extends AppCompatActivity
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        ImageView image1 = (ImageView)findViewById(R.id.imageView2);
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, addPage.class));
+            }
+        });
+
     }
+
 
     @Override
     public void onBackPressed() {
