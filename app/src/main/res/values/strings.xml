@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string-array name="planets_array">
+    <string-array name="teams_array">
         <item>Premier League</item>
         <item>Bundesliga</item>
         <item>La Liga</item>

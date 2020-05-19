@@ -22,15 +22,25 @@ import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.app.Activity;
+import android.widget.TextView;
 
-public class addPage extends Activity {
+public class addPage extends AppCompatActivity  {
+
+    TextView data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_page);
+
+        data = findViewById(R.id.textView2);
+
     }
 
+    private void fetchData () {
+
+
+    }
 
 
 
