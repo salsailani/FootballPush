@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+
             android:label="FootballPush"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".addPage" > </activity>
+
+
+</application>
 
 </manifest>

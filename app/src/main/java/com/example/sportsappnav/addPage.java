@@ -1,4 +1,5 @@
 package com.example.sportsappnav;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,8 +21,9 @@ import android.widget.ImageView;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View.OnClickListener;
+import android.app.Activity;
 
-public class addPage extends AppCompatActivity {
+public class addPage extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
