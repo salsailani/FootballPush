@@ -24,6 +24,12 @@ import android.view.View.OnClickListener;
 import android.app.Activity;
 import android.widget.TextView;
 
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class addPage extends AppCompatActivity  {
 
     TextView data;
@@ -33,14 +39,39 @@ public class addPage extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_page);
 
-        data = findViewById(R.id.textView2);
-
+        //TextView data = (TextView) findViewById(R.id.textView2);
+        //data.setText(fetchData());
     }
 
-    private void fetchData () {
+/*
+    private String fetchData () {
+
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url("https://api-football-v1.p.rapidapi.com/v2/fixtures/team/33/next/10?timezone=Europe%252FLondon")
+                    .get()
+                    .addHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com")
+                    .addHeader("x-rapidapi-key", "9560035ce2msh757478739105ef3p16f2bdjsne73344650fc8")
+                    .build();
+
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return("error check trace");
+        }
+        try {
+            return response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return("error check trace");
+        }
 
 
     }
+*/
 
 
 
