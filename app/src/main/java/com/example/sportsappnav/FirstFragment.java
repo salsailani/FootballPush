@@ -1,36 +1,25 @@
 package com.example.sportsappnav;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ImageButton;
-import android.content.Intent;
-import android.view.View.OnClickListener;
-import android.app.Activity;
-import android.widget.TextView;
-import android.support.v7.app.AppCompatActivity;
 
 
 public class FirstFragment extends Fragment {
-    ImageButton imageButton;
+
+    PremierLeague premierLeague;
+    Bundesliga bundesliga;
+    Eredivisie eredivisie;
+    LaLiga laLiga;
+    LigaMX ligaMX;
+    MajorLeagueSoccer majorLeagueSoccer;
+    SerieA serieA;
+
     public FirstFragment() {}
 
     @Override
@@ -38,24 +27,64 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_first, container, false);
-        imageButton = (ImageButton)view.findViewById(R.id.imageButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), addPage.class));
-            }
-        });
 
         //fill spinner from string.xml
         Spinner spinner = (Spinner) view.findViewById(R.id.teams_spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.teams_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
+
+        premierLeague = new PremierLeague();
+        bundesliga = new Bundesliga();
+        eredivisie = new Eredivisie();
+        laLiga = new LaLiga();
+        ligaMX = new LigaMX();
+        majorLeagueSoccer = new MajorLeagueSoccer();
+        serieA = new SerieA();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item,
+                getResources().getStringArray(R.array.teams_array));
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:
+                        setFragment(premierLeague);
+                        break;
+                    case 1:
+                        setFragment(bundesliga);
+                        break;
+                    case 2:
+                        setFragment(laLiga);
+                        break;
+                    case 3:
+                        setFragment(eredivisie);
+                        break;
+                    case 4:
+                        setFragment(serieA);
+                        break;
+                    case 5:
+                        setFragment(majorLeagueSoccer);
+                        break;
+                    case 6:
+                        setFragment(ligaMX);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
 
         return view;
     }
+
+   public void setFragment(Fragment fragment){
+       FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+       fragmentTransaction.replace(R.id.main_frame, fragment);
+       fragmentTransaction.commit();
+   }
+
 }
