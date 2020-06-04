@@ -9,7 +9,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="hello this is the text"
         tools:layout_editor_absoluteX="114dp"
         tools:layout_editor_absoluteY="150dp" />
 </android.support.constraint.ConstraintLayout>

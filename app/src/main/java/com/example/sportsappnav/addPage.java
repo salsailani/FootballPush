@@ -1,35 +1,15 @@
 package com.example.sportsappnav;
-import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.Spinner;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ImageButton;
-import android.content.Intent;
-import android.view.View.OnClickListener;
-import android.app.Activity;
 import android.widget.TextView;
-import java.net.URLEncoder;
-
-import java.io.IOException;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class addPage extends AppCompatActivity  {
 
@@ -41,16 +21,43 @@ public class addPage extends AppCompatActivity  {
         setContentView(R.layout.add_page);
 
         TextView data = (TextView) findViewById(R.id.textView2);
-        data.setText(fetchData());
+        new MyTask().execute();
     }
 
+    private class MyTask extends AsyncTask<Void, Void, Void> {
+        String result;
+        Response response;
 
-    private String fetchData () {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url("https://api-football-v1.p.rapidapi.com/v2/predictions/157462")
+                    .get()
+                    .addHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com")
+                    .addHeader("x-rapidapi-key", "9560035ce2msh757478739105ef3p16f2bdjsne73344650fc8")
+                    .build();
+            try {
+                response = client.newCall(request).execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-    return "hello";
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            TextView data = (TextView) findViewById(R.id.textView2);
+            try {
+                data.setText(response.body().string());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            super.onPostExecute(aVoid);
+        }
+
+
     }
-
-
-
 
 }
