@@ -22,15 +22,11 @@
             >
 
 
-            <GridLayout
+            <com.example.sportsappnav.AutoGridLayout
                 android:id="@+id/mainGrid"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:columnCount="@values/integer/column_count"
-                android:columnOrderPreserved="false"
-                android:padding="14dp"
-                android:rowCount="3">
+                app:columnWidth="150dp">
 
                 <!-- Row 1 -->
 
@@ -265,7 +261,7 @@
                 ........
 
 
-            </GridLayout>
+            </com.example.sportsappnav.AutoGridLayout>
 
         </LinearLayout>
     </ScrollView>
