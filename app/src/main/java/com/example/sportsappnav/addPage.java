@@ -6,10 +6,13 @@ import android.widget.TextView;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
+import java.util.*;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class addPage extends AppCompatActivity  {
 
@@ -31,15 +34,30 @@ public class addPage extends AppCompatActivity  {
         @Override
         protected Void doInBackground(Void... voids) {
             OkHttpClient client = new OkHttpClient();
+            TimeZone timezonedefault = TimeZone.getDefault();
+            // checking default time zone value
+            String timezone =  timezonedefault.getID();
+            String URL = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/33/next/10?timezone=" + timezone;
             Request request = new Request.Builder()
-                    .url("https://api-football-v1.p.rapidapi.com/v2/predictions/157462")
+                    .url(URL)
                     .get()
                     .addHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com")
                     .addHeader("x-rapidapi-key", "9560035ce2msh757478739105ef3p16f2bdjsne73344650fc8")
                     .build();
             try {
                 response = client.newCall(request).execute();
-            } catch (IOException e) {
+                String json = response.body().string();
+
+                JSONObject obj = new JSONObject(json);
+                JSONObject jsonData = obj.optJSONObject("api");
+                JSONArray arr = jsonData.getJSONArray("fixtures");
+                //JSONObject home = arr.getJSONObject(Integer.parseInt("homeTeam"));
+                    for (int i = 0; i < arr.length(); i++) {
+                    result = arr.getJSONObject(i).getString("homeTeam");
+                }
+
+
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
 
@@ -49,11 +67,7 @@ public class addPage extends AppCompatActivity  {
         @Override
         protected void onPostExecute(Void aVoid) {
             TextView data = (TextView) findViewById(R.id.textView2);
-            try {
-                data.setText(response.body().string());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            data.setText(result);
             super.onPostExecute(aVoid);
         }
 
