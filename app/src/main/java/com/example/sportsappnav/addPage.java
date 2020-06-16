@@ -29,6 +29,7 @@ public class addPage extends AppCompatActivity  {
 
     private class MyTask extends AsyncTask<Void, Void, Void> {
         String result;
+        String result2;
         Response response;
 
         @Override
@@ -49,11 +50,12 @@ public class addPage extends AppCompatActivity  {
                 String json = response.body().string();
 
                 JSONObject obj = new JSONObject(json);
-                JSONObject jsonData = obj.optJSONObject("api");
+                JSONObject jsonData = obj.getJSONObject("api");
                 JSONArray arr = jsonData.getJSONArray("fixtures");
-                //JSONObject home = arr.getJSONObject(Integer.parseInt("homeTeam"));
-                    for (int i = 0; i < arr.length(); i++) {
-                    result = arr.getJSONObject(i).getString("homeTeam");
+                    for (int i = 0; i < arr.length() - 1; i++) {
+                JSONObject object = arr.getJSONObject(i).getJSONObject("homeTeam");
+                JSONObject object2 = arr.getJSONObject(i).getJSONObject("awayTeam");
+                result = object.getString("team_name") + " vs " + object2.getString("team_name");
                 }
 
 
