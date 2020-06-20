@@ -1,7 +1,11 @@
 package com.example.sportsappnav;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import okhttp3.OkHttpClient;
@@ -26,6 +30,8 @@ public class addPage extends AppCompatActivity  {
 
         TextView data = (TextView) findViewById(R.id.textView2);
         new MyTask().execute();
+
+
     }
 
     private class MyTask extends AsyncTask<Void, Void, Void> {
@@ -33,6 +39,7 @@ public class addPage extends AppCompatActivity  {
         String result2;
         Response response;
         ArrayList<String> resultArray = new ArrayList<String>();
+        int timeStamp;
 
 
         Intent intent = getIntent();
@@ -59,15 +66,33 @@ public class addPage extends AppCompatActivity  {
                 JSONObject jsonData = obj.getJSONObject("api");
                 JSONArray arr = jsonData.getJSONArray("fixtures");
                     for (int i = 0; i < arr.length() - 1; i++) {
-                JSONObject homeTeam = arr.getJSONObject(i).getJSONObject("homeTeam");
-                JSONObject awayTeam = arr.getJSONObject(i).getJSONObject("awayTeam");
-                result = homeTeam.getString("team_name") + " vs " + awayTeam.getString("team_name");
+                JSONObject homeTeamObj = arr.getJSONObject(i).getJSONObject("homeTeam");
+                String homeTeam = homeTeamObj.getString("team_name");
+                JSONObject awayTeamObj = arr.getJSONObject(i).getJSONObject("awayTeam");
+                String awayTeam = awayTeamObj.getString("team_name");
+
+
+                int timeStamp = arr.getJSONObject(i).getInt("event_timestamp");
+                result = homeTeam + " vs " + awayTeam;
                 resultArray.add(result);
+
+                        /*calendar attempt
+                        ContentResolver cr = getContentResolver();
+                        ContentValues values = new ContentValues();
+                        values.put(CalendarContract.Events.DTSTART, timeStamp);
+                        values.put(CalendarContract.Events.TITLE, homeTeam + "vs " + awayTeam);
+                        values.put(CalendarContract.Events.DESCRIPTION, "Football Match");
+                        //values.put(CalendarContract.Events.CALENDAR_ID, calID);
+                        Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+                        */
+
                 }
 
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
+
+
 
             return null;
         }
@@ -85,6 +110,8 @@ public class addPage extends AppCompatActivity  {
             data.setText(result2);
             super.onPostExecute(aVoid);
         }
+
+
 
 
     }
