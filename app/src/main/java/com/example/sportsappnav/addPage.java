@@ -1,4 +1,5 @@
 package com.example.sportsappnav;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,11 @@ public class addPage extends AppCompatActivity  {
         String result;
         String result2;
         Response response;
+        ArrayList<String> resultArray = new ArrayList<String>();
+
+
+        Intent intent = getIntent();
+        int teamID = intent.getIntExtra("info", 0);
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -38,7 +44,7 @@ public class addPage extends AppCompatActivity  {
             TimeZone timezonedefault = TimeZone.getDefault();
             // checking default time zone value
             String timezone =  timezonedefault.getID();
-            String URL = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/33/next/10?timezone=" + timezone;
+            String URL = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/" + teamID + "/next/20?timezone=" + timezone;
             Request request = new Request.Builder()
                     .url(URL)
                     .get()
@@ -53,11 +59,11 @@ public class addPage extends AppCompatActivity  {
                 JSONObject jsonData = obj.getJSONObject("api");
                 JSONArray arr = jsonData.getJSONArray("fixtures");
                     for (int i = 0; i < arr.length() - 1; i++) {
-                JSONObject object = arr.getJSONObject(i).getJSONObject("homeTeam");
-                JSONObject object2 = arr.getJSONObject(i).getJSONObject("awayTeam");
-                result = object.getString("team_name") + " vs " + object2.getString("team_name");
+                JSONObject homeTeam = arr.getJSONObject(i).getJSONObject("homeTeam");
+                JSONObject awayTeam = arr.getJSONObject(i).getJSONObject("awayTeam");
+                result = homeTeam.getString("team_name") + " vs " + awayTeam.getString("team_name");
+                resultArray.add(result);
                 }
-
 
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
@@ -69,7 +75,14 @@ public class addPage extends AppCompatActivity  {
         @Override
         protected void onPostExecute(Void aVoid) {
             TextView data = (TextView) findViewById(R.id.textView2);
-            data.setText(result);
+
+            //switching from response type to string
+            String result2 = "";
+            for (String s : resultArray) {
+                result2 +=s + "\n";
+            }
+
+            data.setText(result2);
             super.onPostExecute(aVoid);
         }
 
