@@ -53,66 +53,66 @@ public class PremierLeague extends Fragment {
 
                     //card index to teamID (teamID number from APIFootball)
 
-                    //manchester united
+                    //manunited
                     if (finalI[0] == 0) {
-                        finalI[0] = 33;};
+                        finalI[0] = R.integer.manunited;};
                     //liverpool
                     if (finalI[0] == 1) {
-                        finalI[0] = 40;};
+                        finalI[0] = R.integer.liverpool;};
                     //chelsea
                     if (finalI[0] == 2) {
-                        finalI[0] = 49;};
+                        finalI[0] = R.integer.chelsea;};
                     //mancity
                     if (finalI[0] == 3) {
-                        finalI[0] = 50;};
+                        finalI[0] = R.integer.mancity;};
                     //tottenham
                     if (finalI[0] == 4) {
-                        finalI[0] = 47;};
+                        finalI[0] = R.integer.tottenham;};
                     //arsenal
                     if (finalI[0] == 5) {
-                        finalI[0] = 42;};
+                        finalI[0] = R.integer.arsenal;};
                     //everton
                     if (finalI[0] == 6) {
-                        finalI[0] = 45;};
+                        finalI[0] = R.integer.everton;};
                     //wolves
                     if (finalI[0] == 7) {
-                        finalI[0] = 39;};
+                        finalI[0] = R.integer.wolves;};
                     //leiscter
                     if (finalI[0] == 8) {
-                        finalI[0] = 46;};
+                        finalI[0] = R.integer.leiscter;};
                     //watford
                     if (finalI[0] == 9) {
-                        finalI[0] = 38;};
+                        finalI[0] = R.integer.watford;};
                     //palace
                     if (finalI[0] == 10) {
-                        finalI[0] = 52;};
+                        finalI[0] = R.integer.palace;};
                     //burnley
                     if (finalI[0] == 11) {
-                        finalI[0] = 44;};
+                        finalI[0] = R.integer.burnley;};
                     //southampton
                     if (finalI[0] == 12) {
-                        finalI[0] = 41;};
+                        finalI[0] = R.integer.southampton;};
                     //newcastle
                     if (finalI[0] == 13) {
-                        finalI[0] = 34;};
+                        finalI[0] = R.integer.newcastle;};
                     //brighton
                     if (finalI[0] == 14) {
-                        finalI[0] = 51;};
+                        finalI[0] = R.integer.brighton;};
                     //westham
                     if (finalI[0] == 15) {
-                        finalI[0] = 44;};
+                        finalI[0] = R.integer.westham;};
                     //astonvilla
                     if (finalI[0] == 16) {
-                        finalI[0] = 66;};
+                        finalI[0] = R.integer.astonvilla;};
                     //sheffield
                     if (finalI[0] == 17) {
-                        finalI[0] = 62;};
+                        finalI[0] = R.integer.sheffield;};
                     //bournemouth
                     if (finalI[0] == 18) {
-                        finalI[0] = 35;};
+                        finalI[0] = R.integer.bournemouth;};
                     //norwich
                     if (finalI[0] == 19) {
-                        finalI[0] = 71;};
+                        finalI[0] = R.integer.norwich;};
 
 
 
