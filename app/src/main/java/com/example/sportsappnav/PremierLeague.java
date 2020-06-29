@@ -1,5 +1,6 @@
 package com.example.sportsappnav;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -50,73 +51,7 @@ public class PremierLeague extends Fragment {
                 public void onClick(View view) {
 
                     Intent intent = new Intent(getActivity(), addPage.class);
-
-                    //card index to teamID (teamID number from APIFootball)
-
-                    //manunited
-                    if (finalI[0] == 0) {
-                        finalI[0] = R.integer.manunited;};
-                    //liverpool
-                    if (finalI[0] == 1) {
-                        finalI[0] = R.integer.liverpool;};
-                    //chelsea
-                    if (finalI[0] == 2) {
-                        finalI[0] = R.integer.chelsea;};
-                    //mancity
-                    if (finalI[0] == 3) {
-                        finalI[0] = R.integer.mancity;};
-                    //tottenham
-                    if (finalI[0] == 4) {
-                        finalI[0] = R.integer.tottenham;};
-                    //arsenal
-                    if (finalI[0] == 5) {
-                        finalI[0] = R.integer.arsenal;};
-                    //everton
-                    if (finalI[0] == 6) {
-                        finalI[0] = R.integer.everton;};
-                    //wolves
-                    if (finalI[0] == 7) {
-                        finalI[0] = R.integer.wolves;};
-                    //leiscter
-                    if (finalI[0] == 8) {
-                        finalI[0] = R.integer.leiscter;};
-                    //watford
-                    if (finalI[0] == 9) {
-                        finalI[0] = R.integer.watford;};
-                    //palace
-                    if (finalI[0] == 10) {
-                        finalI[0] = R.integer.palace;};
-                    //burnley
-                    if (finalI[0] == 11) {
-                        finalI[0] = R.integer.burnley;};
-                    //southampton
-                    if (finalI[0] == 12) {
-                        finalI[0] = R.integer.southampton;};
-                    //newcastle
-                    if (finalI[0] == 13) {
-                        finalI[0] = R.integer.newcastle;};
-                    //brighton
-                    if (finalI[0] == 14) {
-                        finalI[0] = R.integer.brighton;};
-                    //westham
-                    if (finalI[0] == 15) {
-                        finalI[0] = R.integer.westham;};
-                    //astonvilla
-                    if (finalI[0] == 16) {
-                        finalI[0] = R.integer.astonvilla;};
-                    //sheffield
-                    if (finalI[0] == 17) {
-                        finalI[0] = R.integer.sheffield;};
-                    //bournemouth
-                    if (finalI[0] == 18) {
-                        finalI[0] = R.integer.bournemouth;};
-                    //norwich
-                    if (finalI[0] == 19) {
-                        finalI[0] = R.integer.norwich;};
-
-
-
-
+                    fetchData(finalI);
                     intent.putExtra("info",  finalI[0]);
                     startActivity(intent);
 
@@ -124,5 +59,74 @@ public class PremierLeague extends Fragment {
             });
 
         }
+    }
+
+    private void fetchData(int [] finalI){
+
+        Resources r = getResources();
+
+        //card index to teamID (teamID number from APIFootball)
+
+        //manunited
+        if (finalI[0] == 0) {
+            finalI[0] = 33;};
+        //liverpool
+        if (finalI[0] == 1) {
+            finalI[0] = r.getInteger(R.integer.liverpool);};
+        //chelsea
+        if (finalI[0] == 2) {
+            finalI[0] = r.getInteger(R.integer.chelsea);};
+        //mancity
+        if (finalI[0] == 3) {
+            finalI[0] = r.getInteger(R.integer.mancity);};
+        //tottenham
+        if (finalI[0] == 4) {
+            finalI[0] = r.getInteger(R.integer.tottenham);};
+        //arsenal
+        if (finalI[0] == 5) {
+            finalI[0] = r.getInteger(R.integer.arsenal);};
+        //everton
+        if (finalI[0] == 6) {
+            finalI[0] = r.getInteger(R.integer.everton);};
+        //wolves
+        if (finalI[0] == 7) {
+            finalI[0] = r.getInteger(R.integer.wolves);};
+        //leiscter
+        if (finalI[0] == 8) {
+            finalI[0] = r.getInteger(R.integer.leiscter);};
+        //watford
+        if (finalI[0] == 9) {
+            finalI[0] = r.getInteger(R.integer.watford);};
+        //palace
+        if (finalI[0] == 10) {
+            finalI[0] = r.getInteger(R.integer.palace);};
+        //burnley
+        if (finalI[0] == 11) {
+            finalI[0] = r.getInteger(R.integer.burnley);};
+        //southampton
+        if (finalI[0] == 12) {
+            finalI[0] = r.getInteger(R.integer.southampton);};
+        //newcastle
+        if (finalI[0] == 13) {
+            finalI[0] = r.getInteger(R.integer.newcastle);};
+        //brighton
+        if (finalI[0] == 14) {
+            finalI[0] = r.getInteger(R.integer.brighton);};
+        //westham
+        if (finalI[0] == 15) {
+            finalI[0] = r.getInteger(R.integer.westham);};
+        //astonvilla
+        if (finalI[0] == 16) {
+            finalI[0] = r.getInteger(R.integer.astonvilla);};
+        //sheffield
+        if (finalI[0] == 17) {
+            finalI[0] = r.getInteger(R.integer.sheffield);};
+        //bournemouth
+        if (finalI[0] == 18) {
+            finalI[0] = r.getInteger(R.integer.bournemouth);};
+        //norwich
+        if (finalI[0] == 19) {
+            finalI[0] = r.getInteger(R.integer.norwich);};
+
     }
 }
