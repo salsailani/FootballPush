@@ -2,6 +2,7 @@ package com.example.sportsappnav;
 import android.Manifest;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -11,8 +12,13 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -32,8 +38,84 @@ public class addPage extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_page);
-
         TextView data = (TextView) findViewById(R.id.textView2);
+        Button push = (Button) findViewById(R.id.buttonPush);
+
+
+        push.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("pushed");
+                // Build an AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(addPage.this);
+
+                // String array for alert dialog multi choice items
+                String[] emails = new String[]{
+                        "email1",
+                        "email2",
+                        "email3"
+                };
+
+                // Boolean array for initial selected items
+                final boolean[] checkedEmails = new boolean[]{
+                        true, // email1
+                        false, // email2
+                        false
+                };
+
+
+
+                // Convert the email array to list
+                final List<String> emailsList = Arrays.asList(emails);
+
+                builder.setMultiChoiceItems(emails, checkedEmails, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        // Update the current focused item's checked status
+                        checkedEmails[which] = isChecked;
+                        // Get the current focused item
+                        String currentItem = emailsList.get(which);
+                        // Notify the current action
+                        Toast.makeText(getApplicationContext(),
+                                currentItem, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                // Specify the dialog is not cancelable
+                builder.setCancelable(false);
+                // Set a title for alert dialog
+                builder.setTitle("Please choose an email");
+
+                // Set the positive/yes button click listener
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when click positive button
+//                        tv.setText("Your preferred colors..... \n");
+                        for (int i = 0; i<checkedEmails.length; i++){
+                            boolean checked = checkedEmails[i];
+                            if (checked) {
+//                                tv.setText(tv.getText() + colorsList.get(i) + "\n");
+                                System.out.println("success");
+                                new MyTask().execute();
+                            }
+                        }
+                    }
+                });
+
+                // Set the neutral/cancel button click listener
+                builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when click the neutral button
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                // Display the alert dialog on interface
+                dialog.show();
+            }
+        });
         new MyTask().execute();
 
     }
@@ -97,7 +179,7 @@ public class addPage extends AppCompatActivity  {
                 e.printStackTrace();
             }
 
-            calendarPush(resultArray,timeStampArray,venueArray);
+//            calendarPush(resultArray,timeStampArray,venueArray);
             return null;
         }
 
