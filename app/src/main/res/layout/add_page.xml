@@ -1,15 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLyt"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Waiting for response"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="150dp" />
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="324dp"
+        android:layout_height="510dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
+        android:background="#FFFFFF"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="326dp"
+            android:layout_height="496dp"
+            android:padding="10dp"
+            android:text="Fill in your design in this place"
+            android:textSize="10dp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

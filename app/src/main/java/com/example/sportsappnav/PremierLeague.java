@@ -1,6 +1,8 @@
 package com.example.sportsappnav;
 
+import android.app.Dialog;
 import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,7 +24,8 @@ import android.widget.Toast;
 public class PremierLeague extends Fragment {
 
     GridLayout mainGrid;
-
+    Integer teamID;
+    TextView data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,8 +33,13 @@ public class PremierLeague extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_premier_league, container, false);
+        View view2 = inflater.inflate(R.layout.add_page, container, false);
+
+
 
         mainGrid = (GridLayout) view.findViewById(R.id.mainGrid);
+        //data = (TextView) view2.findViewById(R.id.textView2);
+
 
         //Set Event
         setSingleEvent(mainGrid);
@@ -49,12 +58,16 @@ public class PremierLeague extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    Intent intent = new Intent(getActivity(), addPage.class);
                     fetchData(finalI);
-                    intent.putExtra("info",  finalI[0]);
-                    startActivity(intent);
-
+                    final Dialog fbDialogue = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar);
+                    fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
+                    fbDialogue.setContentView(R.layout.add_page);
+                    data = fbDialogue.findViewById(R.id.textView2);
+                    fbDialogue.setCancelable(true);
+                    fbDialogue.show();
+                    addPageParams params = new addPageParams(getContext(), finalI[0], data);
+                    addPage addPage = new addPage();
+                    addPage.execute(params);
                 }
             });
 
