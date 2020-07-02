@@ -4,23 +4,46 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
-        android:layout_width="324dp"
-        android:layout_height="510dp"
+        android:layout_width="365dp"
+        android:layout_height="616dp"
+        android:layout_above="@+id/btn_submit"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="28dp"
         android:background="#FFFFFF"
         android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="326dp"
-            android:layout_height="496dp"
+            android:layout_width="match_parent"
+            android:layout_height="603dp"
             android:padding="10dp"
-            android:text="Fill in your design in this place"
-            android:textSize="10dp" />
-
+            android:text="Waiting for response"
+            android:textSize="15dp" />
 
     </RelativeLayout>
+
+
+        <Button
+        android:id="@+id/btn_submit"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:text="Push into Calendar"
+        android:textSize="15dp" />
 
 </RelativeLayout>

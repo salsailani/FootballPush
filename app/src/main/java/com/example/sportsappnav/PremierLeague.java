@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -26,6 +27,8 @@ public class PremierLeague extends Fragment {
     GridLayout mainGrid;
     Integer teamID;
     TextView data;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,6 +53,7 @@ public class PremierLeague extends Fragment {
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
+
         //Loop all child item of Main Grid
         for (int i = 0; i < mainGrid.getChildCount(); i++) {
             //You can see , all child item is CardView , so we just cast object to CardView
@@ -58,16 +62,27 @@ public class PremierLeague extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    final addPage addPage = new addPage();
+                    final calendarPush calendar = new calendarPush();
                     fetchData(finalI);
                     final Dialog fbDialogue = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar);
                     fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
                     fbDialogue.setContentView(R.layout.add_page);
                     data = fbDialogue.findViewById(R.id.textView2);
+                    data.setTextColor(Color.rgb(0,0,0));
                     fbDialogue.setCancelable(true);
                     fbDialogue.show();
                     addPageParams params = new addPageParams(getContext(), finalI[0], data);
-                    addPage addPage = new addPage();
                     addPage.execute(params);
+                    Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
+                    btnsubmit.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
+                            fbDialogue.dismiss();
+                        }
+                    });
                 }
             });
 
