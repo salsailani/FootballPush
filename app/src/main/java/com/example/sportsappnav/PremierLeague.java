@@ -65,13 +65,14 @@ public class PremierLeague extends Fragment {
                     final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
                     fetchData(finalI);
-                    final Dialog fbDialogue = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar);
-                    fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
+                    final Dialog fbDialogue = new Dialog(getContext());
+                    //fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
                     fbDialogue.setContentView(R.layout.add_page);
                     data = fbDialogue.findViewById(R.id.textView2);
                     data.setTextColor(Color.rgb(0,0,0));
-                    fbDialogue.setCancelable(true);
                     fbDialogue.show();
+                    fbDialogue.setCancelable(true);
+                    fbDialogue.setCanceledOnTouchOutside(true);
                     addPageParams params = new addPageParams(getContext(), finalI[0], data);
                     addPage.execute(params);
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
