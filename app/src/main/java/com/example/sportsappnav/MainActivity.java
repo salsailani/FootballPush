@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity
 
         tabLayout.getTabAt(0).setText("CLUBS");
         tabLayout.getTabAt(1).setText("Nations");
-        tabLayout.getTabAt(2).setText("Competitions");
 
     }
 

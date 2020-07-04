@@ -22,9 +22,6 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
                 return new FirstFragment();
             case 1:
                 return new SecondFragment();
-            case 2:
-                return new ThirdFragment();
-
             default:
                 return null;
         }
@@ -32,6 +29,6 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }
