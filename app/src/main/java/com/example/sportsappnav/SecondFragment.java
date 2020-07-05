@@ -157,7 +157,7 @@ public class SecondFragment extends Fragment {
         if (finalI[0] == 19) {
             finalI[0] = 22;};
 
-    //australia
+        //australia
         if (finalI[0] == 20) {
             finalI[0] = 20;};
         //iceland

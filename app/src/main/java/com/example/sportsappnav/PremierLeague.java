@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,7 @@ public class PremierLeague extends Fragment {
     Integer teamID;
     TextView data;
 
+    View view;
 
 
     @Override
@@ -35,7 +37,7 @@ public class PremierLeague extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_premier_league, container, false);
+        view = inflater.inflate(R.layout.fragment_premier_league, container, false);
         View view2 = inflater.inflate(R.layout.add_page, container, false);
 
 
@@ -61,7 +63,7 @@ public class PremierLeague extends Fragment {
             final int[] finalI = {i};
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onClick(final View view) {
                     final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
                     fetchData(finalI);
@@ -82,12 +84,18 @@ public class PremierLeague extends Fragment {
                         public void onClick(View v) {
                             calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
                             fbDialogue.dismiss();
+                            Snackbar mySnackbar = Snackbar.make(view, "Fixtures successfully pushed into calendar    \u2713", 3000);
+                            mySnackbar.getView().setBackgroundColor(Color.parseColor("#008060"));
+                            mySnackbar.show();
                         }
+
                     });
                 }
             });
 
         }
+
+
     }
 
     private void fetchData(int [] finalI){

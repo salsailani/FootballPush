@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -22,13 +23,14 @@ public class Bundesliga extends Fragment {
     GridLayout mainGrid;
     Integer teamID;
     TextView data;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bundesliga, container, false);
+        view = inflater.inflate(R.layout.fragment_bundesliga, container, false);
         View view2 = inflater.inflate(R.layout.add_page, container, false);
 
 
@@ -70,9 +72,6 @@ public class Bundesliga extends Fragment {
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/SC_Paderborn_07_logo.svg/1024px-SC_Paderborn_07_logo.svg.png").into((ImageView) view.findViewById(R.id.SCPaderborn07));
 
 
-
-
-
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -84,7 +83,7 @@ public class Bundesliga extends Fragment {
             final int[] finalI = {i};
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onClick(final View view) {
                     final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
                     fetchData(finalI);
@@ -104,6 +103,9 @@ public class Bundesliga extends Fragment {
                         public void onClick(View v) {
                             calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
                             fbDialogue.dismiss();
+                            Snackbar mySnackbar = Snackbar.make(view, "Fixtures successfully pushed into calendar    \u2713", 3000);
+                            mySnackbar.getView().setBackgroundColor(Color.parseColor("#008060"));
+                            mySnackbar.show();
                         }
                     });
                 }
