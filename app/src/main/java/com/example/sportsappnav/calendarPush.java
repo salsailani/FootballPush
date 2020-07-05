@@ -3,6 +3,7 @@ package com.example.sportsappnav;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -12,29 +13,30 @@ import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.TimeZone;
 
 public class calendarPush {
     public void push (Context ctx, ArrayList<String> resultArray, ArrayList<Integer> timeStampArray, ArrayList<String> venueArray) {
 
         TimeZone timezoneDefault = TimeZone.getDefault();
-        String timezone =  timezoneDefault.getID();
+        String timezone = timezoneDefault.getID();
         String[] PERMISSIONS = {
                 Manifest.permission.READ_CALENDAR,
                 Manifest.permission.WRITE_CALENDAR,
         };
 
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);}
+        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
+        }
 
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);}
+        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
+        }
 
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);}
+        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
+        }
 
 
         ContentResolver cr = ctx.getContentResolver();
@@ -43,7 +45,7 @@ public class calendarPush {
 
         // Projection array. Creating indices for this array instead of doing
         // dynamic lookups improves performance.
-        final String[] EVENT_PROJECTION = new String[] {
+        final String[] EVENT_PROJECTION = new String[]{
                 CalendarContract.Calendars._ID,                           // 0
                 CalendarContract.Calendars.ACCOUNT_NAME,                  // 1
                 CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,         // 2
@@ -58,7 +60,6 @@ public class calendarPush {
         final int PROJECTION_DISPLAY_NAME_INDEX = 2;
         final int PROJECTION_OWNER_ACCOUNT_INDEX = 3;
         final int PROJECTION_VISIBLE = 4;
-
 
 
         // Run query
@@ -98,11 +99,14 @@ public class calendarPush {
             visible = cur.getInt(PROJECTION_VISIBLE);
 
 
-
         }
 
         System.out.println(IDList);
         System.out.println(displayNameList);
+
+        //cr.delete(CalendarContract.Events.CONTENT_URI, null, null);
+
+        ContentResolver cr2 = ctx.getContentResolver();
 
         for (int i = 0; i < resultArray.size(); i++) {
             String title = resultArray.get(i);
@@ -119,6 +123,8 @@ public class calendarPush {
             eventsArray[i] = values;
         }
         cr.bulkInsert(CalendarContract.Events.CONTENT_URI, eventsArray);
+
+
 
     }
 

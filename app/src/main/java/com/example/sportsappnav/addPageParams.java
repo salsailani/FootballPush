@@ -14,6 +14,8 @@ import android.widget.TextView;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.IOException;
 
@@ -44,6 +46,7 @@ import org.json.JSONObject;
         int timeStamp;
         ArrayList<Integer> timeStampArray = new ArrayList<Integer>();
         ArrayList<String> venueArray = new ArrayList<String>();
+        ArrayList<String> resultArray2 = new ArrayList<>();
         TimeZone timezoneDefault = TimeZone.getDefault();
         String timezone =  timezoneDefault.getID();
         TextView data;
@@ -90,6 +93,10 @@ import org.json.JSONObject;
                     timeStampArray.add(timeStamp);
                     //venue
                     venueArray.add(venue);
+                    //
+                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy 'at' hh:mm aaa z");
+                    Long timeStamp2 = (long) timeStamp *1000L;
+                    resultArray2.add(result + "\n" + sdf.format(new Date(timeStamp2)) );
                 }
 
 
@@ -102,8 +109,8 @@ import org.json.JSONObject;
 
 
             String result2 = "";
-            for (String s : resultArray) {
-                result2 +=s + "\n";
+            for (String s : resultArray2) {
+                result2 += s + "\n" + "\n" ;
             }
 
 
