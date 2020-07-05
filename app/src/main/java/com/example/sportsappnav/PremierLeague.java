@@ -98,7 +98,7 @@ public class PremierLeague extends Fragment {
 
         //manunited
         if (finalI[0] == 0) {
-            finalI[0] = 33;};
+            finalI[0] = r.getInteger(R.integer.manunited);};
         //liverpool
         if (finalI[0] == 1) {
             finalI[0] = r.getInteger(R.integer.liverpool);};
