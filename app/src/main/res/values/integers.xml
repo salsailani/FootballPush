@@ -22,4 +22,31 @@
     <integer name="bournemouth">35</integer>
     <integer name="norwich">71</integer>
 
+    <!--Bundesliga clubs -->
+    <integer name="bayernmunchen">157</integer>
+    <integer name="Hoffenheim">167</integer>
+    <integer name="FortunaDusseldorf">158</integer>
+    <integer name="FCAugsburg">170</integer>
+    <integer name="FCNurnberg">171</integer>
+    <integer name="SCFreiburg">160</integer>
+    <integer name="EintrachtFrankfurt">169</integer>
+    <integer name="VfLWolfsburg">161</integer>
+    <integer name="FCSchalke04">174</integer>
+    <integer name="WerderBremen">162</integer>
+    <integer name="Hannover96">166</integer>
+    <integer name="BayerLeverkusen">168</integer>
+    <integer name="FSVMainz05">157</integer>
+    <integer name="VfBStuttgart">172</integer>
+    <integer name="RBLeipzig">173</integer>
+    <integer name="UnionBerlin">182</integer>
+    <integer name="HamburgerSV">175</integer>
+    <integer name="FCKoln">192</integer>
+    <integer name="BorussiaMonchengladbach">163</integer>
+    <integer name="BorussiaDortmund">165</integer>
+    <integer name="HerthaBerlin">159</integer>
+    <integer name="SCPaderborn07">185</integer>
+
+
+
+
 </resources>
