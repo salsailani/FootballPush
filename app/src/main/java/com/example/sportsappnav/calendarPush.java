@@ -119,7 +119,7 @@ public class calendarPush {
             values.put(CalendarContract.Events.TITLE, title);
             values.put(CalendarContract.Events.DESCRIPTION, title);
             values.put(CalendarContract.Events.EVENT_LOCATION, loc);
-            values.put(CalendarContract.Events.CALENDAR_ID, 1);
+            values.put(CalendarContract.Events.CALENDAR_ID, IDList.get(0));
             eventsArray[i] = values;
         }
         cr.bulkInsert(CalendarContract.Events.CONTENT_URI, eventsArray);

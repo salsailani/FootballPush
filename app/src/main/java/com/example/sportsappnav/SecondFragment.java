@@ -1,24 +1,199 @@
 package com.example.sportsappnav;
+
+import android.app.Dialog;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class SecondFragment extends Fragment{
 
-    public SecondFragment() {}
+
+public class SecondFragment extends Fragment {
+
+    GridLayout mainGrid;
+    Integer teamID;
+    TextView data;
+
+
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        View view2 = inflater.inflate(R.layout.add_page, container, false);
+
+
+
+        mainGrid = (GridLayout) view.findViewById(R.id.mainGrid);
+        //data = (TextView) view2.findViewById(R.id.textView2);
+
+
+        //Set Event
+        setSingleEvent(mainGrid);
+
+
+
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_second, container, false);
+    private void setSingleEvent(GridLayout mainGrid) {
+
+        //Loop all child item of Main Grid
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            CardView cardView = (CardView) mainGrid.getChildAt(i);
+            final int[] finalI = {i};
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final addPage addPage = new addPage();
+                    final calendarPush calendar = new calendarPush();
+                    fetchData(finalI);
+                    final Dialog fbDialogue = new Dialog(getContext());
+                    //fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
+                    fbDialogue.setContentView(R.layout.add_page);
+                    data = fbDialogue.findViewById(R.id.textView2);
+                    data.setTextColor(Color.rgb(0,0,0));
+                    fbDialogue.show();
+                    fbDialogue.setCancelable(true);
+                    fbDialogue.setCanceledOnTouchOutside(true);
+                    addPageParams params = new addPageParams(getContext(), finalI[0], data);
+                    addPage.execute(params);
+                    Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
+                    btnsubmit.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
+                            fbDialogue.dismiss();
+                        }
+                    });
+                }
+            });
+
+        }
+    }
+
+    private void fetchData(int [] finalI){
+
+        Resources r = getResources();
+
+        //card index to teamID (teamID number from APIFootball)
+
+        //france
+        if (finalI[0] == 0) {
+            finalI[0] = 2;};
+        //argentina
+        if (finalI[0] == 1) {
+            finalI[0] = 26;};
+        //uruguay
+        if (finalI[0] == 2) {
+            finalI[0] = 7;};
+        //Portugal
+        if (finalI[0] == 3) {
+            finalI[0] =27;};
+        //spain
+        if (finalI[0] == 4) {
+            finalI[0] =9;};
+        //russia
+        if (finalI[0] == 5) {
+            finalI[0] = 4;};
+        //croatia
+        if (finalI[0] == 6) {
+            finalI[0] = 3;};
+        //denmark
+        if (finalI[0] == 7) {
+            finalI[0] =21;};
+        //Brazil
+        if (finalI[0] == 8) {
+            finalI[0] = 6;};
+        //mexico
+        if (finalI[0] == 9) {
+            finalI[0] =16;};
+        //belgium
+        if (finalI[0] == 10) {
+            finalI[0] = 1;};
+        //japan
+        if (finalI[0] == 11) {
+            finalI[0] = 12;};
+        //sweden
+        if (finalI[0] == 12) {
+            finalI[0] = 5;};
+        //switzerland
+        if (finalI[0] == 13) {
+            finalI[0] = 15;};
+        //columbia
+        if (finalI[0] == 14) {
+            finalI[0] = 8;};
+        //England
+        if (finalI[0] == 15) {
+            finalI[0] = 10;};
+        //saudi
+        if (finalI[0] == 16) {
+            finalI[0] = 23;};
+        //egypt
+        if (finalI[0] == 17) {
+            finalI[0] = 32;};
+        //morroco
+        if (finalI[0] == 18) {
+            finalI[0] = 31;};
+        //iran
+        if (finalI[0] == 19) {
+            finalI[0] = 22;};
+
+    //australia
+        if (finalI[0] == 20) {
+            finalI[0] = 20;};
+        //iceland
+        if (finalI[0] == 21) {
+            finalI[0] = 18;};
+        //peru
+        if (finalI[0] == 22) {
+            finalI[0] = 30;};
+        //nigeria
+        if (finalI[0] == 23) {
+            finalI[0] = 19;};
+        //costarica
+        if (finalI[0] == 24) {
+            finalI[0] = 29;};
+        //serbia
+        if (finalI[0] == 25) {
+            finalI[0] = 14;};
+        //germany
+        if (finalI[0] == 26) {
+            finalI[0] = 25;};
+        //south korea
+        if (finalI[0] == 27) {
+            finalI[0] = 17;};
+        //panama
+        if (finalI[0] == 28) {
+            finalI[0] = 11;};
+        //tunisia
+        if (finalI[0] == 29) {
+            finalI[0] = 28;};
+        //poland
+        if (finalI[0] == 30) {
+            finalI[0] = 24;};
+        //Senegal
+        if (finalI[0] == 31) {
+            finalI[0] = 13;};
+
+
     }
 }
