@@ -17,9 +17,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 
 
 public class SecondFragment extends Fragment {
@@ -27,6 +29,7 @@ public class SecondFragment extends Fragment {
     GridLayout mainGrid;
     Integer teamID;
     TextView data;
+    View view;
 
 
 
@@ -43,6 +46,7 @@ public class SecondFragment extends Fragment {
         mainGrid = (GridLayout) view.findViewById(R.id.mainGrid);
         //data = (TextView) view2.findViewById(R.id.textView2);
 
+        setPictures(view);
 
         //Set Event
         setSingleEvent(mainGrid);
@@ -51,6 +55,47 @@ public class SecondFragment extends Fragment {
 
         return view;
     }
+
+
+
+    private void setPictures(View view) {
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1024px-Flag_of_France.svg.png").into((ImageView) view.findViewById(R.id.france));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1024px-Flag_of_Argentina.svg.png").into((ImageView) view.findViewById(R.id.argentina));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/1024px-Flag_of_Uruguay.svg.png").into((ImageView) view.findViewById(R.id.uruguay));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1024px-Flag_of_Portugal.svg.png").into((ImageView) view.findViewById(R.id.portugal));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1024px-Flag_of_Spain.svg.png").into((ImageView) view.findViewById(R.id.spain));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1024px-Flag_of_Russia.svg.png").into((ImageView) view.findViewById(R.id.russia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/1024px-Flag_of_Croatia.svg.png").into((ImageView) view.findViewById(R.id.croatia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/1024px-Flag_of_Denmark.svg.png").into((ImageView) view.findViewById(R.id.denmark));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1024px-Flag_of_Brazil.svg.png").into((ImageView) view.findViewById(R.id.brazil));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1024px-Flag_of_Mexico.svg.png").into((ImageView) view.findViewById(R.id.mexico));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/1024px-Flag_of_Belgium.svg.png").into((ImageView) view.findViewById(R.id.belgium));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1024px-Flag_of_Japan.svg.png").into((ImageView) view.findViewById(R.id.japan));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1024px-Flag_of_Sweden.svg.png").into((ImageView) view.findViewById(R.id.sweden));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/95px-Flag_of_Switzerland.svg.png").into((ImageView) view.findViewById(R.id.switzerland));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1024px-Flag_of_Colombia.svg.png").into((ImageView) view.findViewById(R.id.columbia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png").into((ImageView) view.findViewById(R.id.england));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/1024px-Flag_of_Saudi_Arabia.svg.png").into((ImageView) view.findViewById(R.id.saudi));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/1024px-Flag_of_Egypt.svg.png").into((ImageView) view.findViewById(R.id.egypt));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/1024px-Flag_of_Morocco.svg.png").into((ImageView) view.findViewById(R.id.morroco));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/1024px-Flag_of_Iran.svg.png").into((ImageView) view.findViewById(R.id.iran));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1024px-Flag_of_Australia_%28converted%29.svg.png").into((ImageView) view.findViewById(R.id.australia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/1024px-Flag_of_Iceland.svg.png").into((ImageView) view.findViewById(R.id.iceland));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/1024px-Flag_of_Peru.svg.png").into((ImageView) view.findViewById(R.id.peru));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/1024px-Flag_of_Nigeria.svg.png").into((ImageView) view.findViewById(R.id.nigeria));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Costa_Rica_%28state%29.svg/1024px-Flag_of_Costa_Rica_%28state%29.svg.png").into((ImageView) view.findViewById(R.id.costarica));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/1024px-Flag_of_Serbia.svg.png").into((ImageView) view.findViewById(R.id.serbia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1024px-Flag_of_Germany.svg.png").into((ImageView) view.findViewById(R.id.germany));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/1024px-Flag_of_South_Korea.svg.png").into((ImageView) view.findViewById(R.id.southkorea));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/1024px-Flag_of_Panama.svg.png").into((ImageView) view.findViewById(R.id.panama));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/1024px-Flag_of_Tunisia.svg.png").into((ImageView) view.findViewById(R.id.tunisia));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1024px-Flag_of_Poland.svg.png").into((ImageView) view.findViewById(R.id.poland));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/1024px-Flag_of_Senegal.svg.png").into((ImageView) view.findViewById(R.id.senegal));
+
+
+    }
+
+
 
     private void setSingleEvent(GridLayout mainGrid) {
 
@@ -64,7 +109,8 @@ public class SecondFragment extends Fragment {
                 public void onClick(View view) {
                     final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
-                    fetchData(finalI);
+                    int final2;
+                    final2 = fetchData(finalI);
                     final Dialog fbDialogue = new Dialog(getContext());
                     //fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
                     fbDialogue.setContentView(R.layout.add_page);
@@ -73,7 +119,7 @@ public class SecondFragment extends Fragment {
                     fbDialogue.show();
                     fbDialogue.setCancelable(true);
                     fbDialogue.setCanceledOnTouchOutside(true);
-                    addPageParams params = new addPageParams(getContext(), finalI[0], data);
+                    addPageParams params = new addPageParams(getContext(), final2, data);
                     addPage.execute(params);
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +136,7 @@ public class SecondFragment extends Fragment {
         }
     }
 
-    private void fetchData(int [] finalI){
+    private int fetchData(int [] finalI){
 
         Resources r = getResources();
 
@@ -98,102 +144,105 @@ public class SecondFragment extends Fragment {
 
         //france
         if (finalI[0] == 0) {
-            finalI[0] = 2;};
+            return 2;}
         //argentina
-        if (finalI[0] == 1) {
-            finalI[0] = 26;};
+        else if (finalI[0] == 1) {
+            return 26;}
         //uruguay
-        if (finalI[0] == 2) {
-            finalI[0] = 7;};
+        else if (finalI[0] == 2) {
+            return 7;}
         //Portugal
-        if (finalI[0] == 3) {
-            finalI[0] =27;};
+        else if (finalI[0] == 3) {
+            return 27;}
         //spain
-        if (finalI[0] == 4) {
-            finalI[0] =9;};
+        else if (finalI[0] == 4) {
+            return 9;}
         //russia
-        if (finalI[0] == 5) {
-            finalI[0] = 4;};
+        else if (finalI[0] == 5) {
+            return 4;}
         //croatia
-        if (finalI[0] == 6) {
-            finalI[0] = 3;};
+        else if (finalI[0] == 6) {
+            return 3;}
         //denmark
-        if (finalI[0] == 7) {
-            finalI[0] =21;};
+        else if (finalI[0] == 7) {
+            return 21;}
         //Brazil
-        if (finalI[0] == 8) {
-            finalI[0] = 6;};
+        else if (finalI[0] == 8) {
+            return  6;}
         //mexico
-        if (finalI[0] == 9) {
-            finalI[0] =16;};
+        else if (finalI[0] == 9) {
+            return 16;}
         //belgium
-        if (finalI[0] == 10) {
-            finalI[0] = 1;};
+        else if (finalI[0] == 10) {
+            return 1;}
         //japan
-        if (finalI[0] == 11) {
-            finalI[0] = 12;};
+        else if (finalI[0] == 11) {
+            return  12;}
         //sweden
-        if (finalI[0] == 12) {
-            finalI[0] = 5;};
+        else if (finalI[0] == 12) {
+            return 5;}
         //switzerland
-        if (finalI[0] == 13) {
-            finalI[0] = 15;};
+        else if (finalI[0] == 13) {
+            return 15;}
         //columbia
-        if (finalI[0] == 14) {
-            finalI[0] = 8;};
+        else if (finalI[0] == 14) {
+            return  8;}
         //England
-        if (finalI[0] == 15) {
-            finalI[0] = 10;};
+        else if (finalI[0] == 15) {
+            return 10;}
         //saudi
-        if (finalI[0] == 16) {
-            finalI[0] = 23;};
+        else if (finalI[0] == 16) {
+            return  23;}
         //egypt
-        if (finalI[0] == 17) {
-            finalI[0] = 32;};
+        else if (finalI[0] == 17) {
+            return 32;}
         //morroco
-        if (finalI[0] == 18) {
-            finalI[0] = 31;};
+        else if (finalI[0] == 18) {
+            return  31;}
         //iran
-        if (finalI[0] == 19) {
-            finalI[0] = 22;};
+        else if (finalI[0] == 19) {
+            return  22;}
 
         //australia
-        if (finalI[0] == 20) {
-            finalI[0] = 20;};
+        else if (finalI[0] == 20) {
+            return  20;}
         //iceland
-        if (finalI[0] == 21) {
-            finalI[0] = 18;};
+        else if (finalI[0] == 21) {
+            return 18;}
         //peru
-        if (finalI[0] == 22) {
-            finalI[0] = 30;};
+        else if (finalI[0] == 22) {
+            return 30;}
         //nigeria
-        if (finalI[0] == 23) {
-            finalI[0] = 19;};
+        else if (finalI[0] == 23) {
+            return  19;}
         //costarica
-        if (finalI[0] == 24) {
-            finalI[0] = 29;};
+        else if (finalI[0] == 24) {
+            return  29;}
         //serbia
-        if (finalI[0] == 25) {
-            finalI[0] = 14;};
+        else if (finalI[0] == 25) {
+            return 14;}
         //germany
-        if (finalI[0] == 26) {
-            finalI[0] = 25;};
+        else if (finalI[0] == 26) {
+            return  25;}
         //south korea
-        if (finalI[0] == 27) {
-            finalI[0] = 17;};
+        else if (finalI[0] == 27) {
+            return 17;}
         //panama
-        if (finalI[0] == 28) {
-            finalI[0] = 11;};
+        else if (finalI[0] == 28) {
+            return  11;}
         //tunisia
-        if (finalI[0] == 29) {
-            finalI[0] = 28;};
+        else if (finalI[0] == 29) {
+            return 28;}
         //poland
-        if (finalI[0] == 30) {
-            finalI[0] = 24;};
+        else if (finalI[0] == 30) {
+            return 24;}
         //Senegal
-        if (finalI[0] == 31) {
-            finalI[0] = 13;};
+        else if (finalI[0] == 31) {
+            return  13;}
 
 
+        return 100;
     }
+
+
 }
