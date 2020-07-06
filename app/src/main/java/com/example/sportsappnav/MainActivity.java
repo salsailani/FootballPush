@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity
     private void setTabLayout() {
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setText("CLUBS");
-        tabLayout.getTabAt(1).setText("Nations");
+        tabLayout.getTabAt(0).setText("LEAGUES");
+        tabLayout.getTabAt(1).setText("NATIONAL TEAMS");
 
     }
 
