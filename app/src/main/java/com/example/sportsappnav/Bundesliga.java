@@ -55,19 +55,19 @@ public class Bundesliga extends Fragment {
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1024px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png").into((ImageView) view.findViewById(R.id.bayernmunich));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1024px-Borussia_Dortmund_logo.svg.png").into((ImageView) view.findViewById(R.id.borrusiadortmund));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/0/04/RB_Leipzig_2014_logo.svg/1024px-RB_Leipzig_2014_logo.svg.png").into((ImageView) view.findViewById(R.id.RBlezpeig));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/800px-Borussia_M%C3%B6nchengladbach_logo.svg.png").into((ImageView) view.findViewById(R.id.BorussiaMonchengladbach));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1024px-Borussia_M%C3%B6nchengladbach_logo.svg.png").into((ImageView) view.findViewById(R.id.BorussiaMonchengladbach));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1024px-Bayer_04_Leverkusen_logo.svg.png").into((ImageView) view.findViewById(R.id.BayerLeverkusen));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Logo_TSG_Hoffenheim.svg/800px-Logo_TSG_Hoffenheim.svg.png").into((ImageView) view.findViewById(R.id.Hoffenheim));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Logo_TSG_Hoffenheim.svg/1024px-Logo_TSG_Hoffenheim.svg.png").into((ImageView) view.findViewById(R.id.Hoffenheim));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo-VfL-Wolfsburg.svg/1024px-Logo-VfL-Wolfsburg.svg.png").into((ImageView) view.findViewById(R.id.VfLWolfsburg));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/800px-SC_Freiburg_logo.svg.png").into((ImageView) view.findViewById(R.id.SCFreiburg));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/1024px-SC_Freiburg_logo.svg.png").into((ImageView) view.findViewById(R.id.SCFreiburg));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Eintracht_Frankfurt_Logo.svg/1024px-Eintracht_Frankfurt_Logo.svg.png").into((ImageView) view.findViewById(R.id.EintrachtFrankfurt));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Hertha_BSC_Logo_2012.svg/1024px-Hertha_BSC_Logo_2012.svg.png").into((ImageView) view.findViewById(R.id.HerthaBerlin));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/1._FC_Union_Berlin_Logo.svg/1024px-1._FC_Union_Berlin_Logo.svg.png").into((ImageView) view.findViewById(R.id.UnionBerlin));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/FC_Schalke_04_Logo.svg/1024px-FC_Schalke_04_Logo.svg.png").into((ImageView) view.findViewById(R.id.FCSchalke04));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Logo_Mainz_05.svg/1024px-Logo_Mainz_05.svg.png").into((ImageView) view.findViewById(R.id.FSVMainz05));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/800px-FC_Cologne_logo.svg.png").into((ImageView) view.findViewById(R.id.FCKoln));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/FC_Augsburg_logo.svg/800px-FC_Augsburg_logo.svg.png").into((ImageView) view.findViewById(R.id.FCAugsburg));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/SV-Werder-Bremen-Logo.svg/800px-SV-Werder-Bremen-Logo.svg.png").into((ImageView) view.findViewById(R.id.WerderBremen));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/1024px-FC_Cologne_logo.svg.png").into((ImageView) view.findViewById(R.id.FCKoln));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/FC_Augsburg_logo.svg/1024px-FC_Augsburg_logo.svg.png").into((ImageView) view.findViewById(R.id.FCAugsburg));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/SV-Werder-Bremen-Logo.svg/1024px-SV-Werder-Bremen-Logo.svg.png").into((ImageView) view.findViewById(R.id.WerderBremen));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Fortuna_D%C3%BCsseldorf.svg/1024px-Fortuna_D%C3%BCsseldorf.svg.png").into((ImageView) view.findViewById(R.id.FortunaDusseldorf));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/SC_Paderborn_07_logo.svg/1024px-SC_Paderborn_07_logo.svg.png").into((ImageView) view.findViewById(R.id.SCPaderborn07));
 
