@@ -19,6 +19,7 @@ public class FirstFragment extends Fragment {
     LigaMX ligaMX;
     MajorLeagueSoccer majorLeagueSoccer;
     SerieA serieA;
+    LigueOne ligueOne;
 
     public FirstFragment() {}
 
@@ -38,6 +39,7 @@ public class FirstFragment extends Fragment {
         ligaMX = new LigaMX();
         majorLeagueSoccer = new MajorLeagueSoccer();
         serieA = new SerieA();
+        ligueOne = new LigueOne();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_dropdown_item,
@@ -60,15 +62,18 @@ public class FirstFragment extends Fragment {
                         setFragment(laLiga);
                         break;
                     case 3:
-                        setFragment(eredivisie);
-                        break;
-                    case 4:
                         setFragment(serieA);
                         break;
+                    case 4:
+                        setFragment(ligueOne);
+                        break;
                     case 5:
-                        setFragment(majorLeagueSoccer);
+                        setFragment(eredivisie);
                         break;
                     case 6:
+                        setFragment(majorLeagueSoccer);
+                        break;
+                    case 7:
                         setFragment(ligaMX);
                         break;
                 }
