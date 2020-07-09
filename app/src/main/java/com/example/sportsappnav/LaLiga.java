@@ -177,7 +177,7 @@ public class LaLiga extends Fragment {
             return  533;}
         //real sociedad
         else if (finalI[0] == 15) {
-            return 10;}
+            return 548;}
         //huesca
         else if (finalI[0] == 16) {
             return  726;}
