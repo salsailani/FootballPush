@@ -23,7 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".addPage"></activity>
+        <activity android:name=".aboutPage"
+            />
+        <activity android:name=".FAQpage"
+            />
+        <activity android:name=".contact"
+            />
+
     </application>
 
 </manifest>

@@ -15,12 +15,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
+        android:layout_width="268dp"
+        android:layout_height="96dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/soccer"
-        tools:srcCompat="@drawable/soccer" />
+        app:srcCompat="@drawable/brandlogo"
+        tools:srcCompat="@drawable/brandlogo" />
 
     <TextView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fixtures pushed into your google calendar"
-        tools:text="Fixtures pushed into your google calendar" />
+        android:text="Fixtures pushed into your calendar"
+        tools:text="Fixtures pushed into your calendar" />
 
 </LinearLayout>

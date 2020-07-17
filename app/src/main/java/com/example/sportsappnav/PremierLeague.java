@@ -3,7 +3,9 @@ package com.example.sportsappnav;
 import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,7 +33,11 @@ public class PremierLeague extends Fragment {
 
     View view;
 
+    radioDialog radio = new radioDialog();
+    readCalendar read = new readCalendar();
 
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,7 +56,6 @@ public class PremierLeague extends Fragment {
         setSingleEvent(mainGrid);
 
 
-
         return view;
     }
 
@@ -64,11 +69,10 @@ public class PremierLeague extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View view) {
-                    final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
+                    final addPage addPage = new addPage();
                     fetchData(finalI);
                     final Dialog fbDialogue = new Dialog(getContext());
-                    //fbDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100, 0, 0, 0)));
                     fbDialogue.setContentView(R.layout.add_page);
                     data = fbDialogue.findViewById(R.id.textView2);
                     data.setTextColor(Color.rgb(0,0,0));
@@ -80,13 +84,11 @@ public class PremierLeague extends Fragment {
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
+                        @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onClick(View v) {
-                            calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
                             fbDialogue.dismiss();
-                            Snackbar mySnackbar = Snackbar.make(view, "Fixtures successfully pushed into calendar    \u2713", 3000);
-                            mySnackbar.getView().setBackgroundColor(Color.parseColor("#008060"));
-                            mySnackbar.show();
+                            radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
                         }
 
                     });

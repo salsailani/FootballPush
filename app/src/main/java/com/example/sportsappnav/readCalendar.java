@@ -3,22 +3,31 @@ package com.example.sportsappnav;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.CalendarContract;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.TimeZone;
 
-public class calendarPush {
-    public void push (Context ctx, ArrayList<String> resultArray, ArrayList<Integer> timeStampArray, ArrayList<String> venueArray, int calID2) {
+public class readCalendar {
+    Set<Integer> IDList = new HashSet<>();
+    Set<String> displayNameList = new HashSet<String>();
+    Map< String, Integer> hmap;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public String[] read(Context ctx, ArrayList<String> resultArray) {
         TimeZone timezoneDefault = TimeZone.getDefault();
         String timezone = timezoneDefault.getID();
         String[] PERMISSIONS = {
@@ -40,8 +49,8 @@ public class calendarPush {
 
 
         ContentResolver cr = ctx.getContentResolver();
-
         ContentValues[] eventsArray = new ContentValues[resultArray.size()];
+
 
         // Projection array. Creating indices for this array instead of doing
         // dynamic lookups improves performance.
@@ -71,12 +80,11 @@ public class calendarPush {
         cur = cr.query(uri, EVENT_PROJECTION, null, null, null);
 
 
-        ArrayList<Long> IDList = new ArrayList<Long>();
-        ArrayList<String> displayNameList = new ArrayList<String>();
+
 
         // Use the cursor to step through the returned records
         while (cur.moveToNext()) {
-            long calID = 0;
+            //int calID = 0;
             String displayName = null;
             String accountName = null;
             String ownerName = null;
@@ -84,7 +92,7 @@ public class calendarPush {
 
 
             // Get the field values
-            calID = cur.getLong(PROJECTION_ID_INDEX);
+            Integer calID = (int) (long) cur.getLong(PROJECTION_ID_INDEX);
             visible = cur.getInt(PROJECTION_VISIBLE);
             displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
 
@@ -103,29 +111,31 @@ public class calendarPush {
 
         System.out.println(IDList);
         System.out.println(displayNameList);
+        hmap = new HashMap< String , Integer>();
 
-        //cr.delete(CalendarContract.Events.CONTENT_URI, null, null);
-
-        ContentResolver cr2 = ctx.getContentResolver();
-
-        for (int i = 0; i < resultArray.size(); i++) {
-            String title = resultArray.get(i);
-            int timeStamp2 = timeStampArray.get(i);
-            String loc = venueArray.get(i);
-            ContentValues values = new ContentValues();
-            values.put(CalendarContract.Events.DTSTART,  (long) timeStamp2 *1000L);
-            values.put(CalendarContract.Events.DTEND,  (long) (timeStamp2*1000L) +7200000L );
-            values.put(CalendarContract.Events.EVENT_TIMEZONE, timezone);
-            values.put(CalendarContract.Events.TITLE, title);
-            values.put(CalendarContract.Events.DESCRIPTION, title);
-            values.put(CalendarContract.Events.EVENT_LOCATION, loc);
-            values.put(CalendarContract.Events.CALENDAR_ID, calID2);
-            eventsArray[i] = values;
+        Iterator it1 = displayNameList.iterator();
+        Iterator it2 = IDList.iterator();
+        while(it1.hasNext()) {
+            hmap.put((String) it1.next(), (Integer) it2.next());
         }
-        cr.bulkInsert(CalendarContract.Events.CONTENT_URI, eventsArray);
 
+
+
+        final String[] displayNameArray= displayNameList.toArray(new String[displayNameList.size()]);
+        return displayNameArray;
 
 
     }
-
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Integer[] returnIDList(){
+        Integer[] IDListArray = (Integer[]) IDList.toArray();
+        for (int i=0; i<IDListArray.length;i++){
+            IDListArray[i] =  Math.toIntExact(IDListArray[i]);
+        }
+        return IDListArray;
+    }
+    public String[] returnDisplayNameList(){
+        String[] displayNameArray= displayNameList.toArray(new String[displayNameList.size()]);
+        return displayNameArray;
+    }
 }

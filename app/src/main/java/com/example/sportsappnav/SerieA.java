@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ public class SerieA extends Fragment {
     Integer teamID;
     TextView data;
     View view;
+    radioDialog radio = new radioDialog();
 
 
 
@@ -93,7 +95,7 @@ public class SerieA extends Fragment {
             final int[] finalI = {i};
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onClick(final View view) {
                     final addPage addPage = new addPage();
                     final calendarPush calendar = new calendarPush();
                     int final2;
@@ -113,8 +115,8 @@ public class SerieA extends Fragment {
 
                         @Override
                         public void onClick(View v) {
-                            calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
                             fbDialogue.dismiss();
+                            radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
                         }
                     });
                 }

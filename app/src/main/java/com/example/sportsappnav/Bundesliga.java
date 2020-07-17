@@ -3,7 +3,9 @@ package com.example.sportsappnav;
 import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -24,6 +26,8 @@ public class Bundesliga extends Fragment {
     Integer teamID;
     TextView data;
     View view;
+    radioDialog radio = new radioDialog();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,13 +103,11 @@ public class Bundesliga extends Fragment {
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
+                        @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onClick(View v) {
-                            calendar.push(getContext(), addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray() );
                             fbDialogue.dismiss();
-                            Snackbar mySnackbar = Snackbar.make(view, "Fixtures successfully pushed into calendar    \u2713", 3000);
-                            mySnackbar.getView().setBackgroundColor(Color.parseColor("#008060"));
-                            mySnackbar.show();
+                            radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
                         }
                     });
                 }
