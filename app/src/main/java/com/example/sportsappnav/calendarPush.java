@@ -11,7 +11,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -120,11 +119,15 @@ public class calendarPush {
             values.put(CalendarContract.Events.DESCRIPTION, title);
             values.put(CalendarContract.Events.EVENT_LOCATION, loc);
             values.put(CalendarContract.Events.CALENDAR_ID, calID2);
-            eventsArray[i] = values;
+
+            long begin =(long) timeStamp2 *1000L; // starting time in milliseconds
+            long end =(long) (timeStamp2*1000L) +7200000L; // ending time in milliseconds
+            Cursor cursor =
+                    CalendarContract.Instances.query(ctx.getContentResolver(), null, begin, end, title);
+            if (cursor.getCount() == 0) {
+                cr.insert(CalendarContract.Events.CONTENT_URI, values);
+            }
         }
-        cr.bulkInsert(CalendarContract.Events.CONTENT_URI, eventsArray);
-
-
 
     }
 
