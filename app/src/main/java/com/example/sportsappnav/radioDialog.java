@@ -53,6 +53,7 @@ public class radioDialog {
                 final calendarPush calendar = new calendarPush();
                 System.out.println(selectedItem);
                 int calendarID = read.hmap.get(selectedItem);
+                System.out.println(calendarID);
                 calendar.push(activity, results, time, venue, calendarID );
                 Snackbar mySnackbar = Snackbar.make(view, "Fixtures successfully pushed into calendar    \u2713", 3000);
                 mySnackbar.getView().setBackgroundColor(Color.parseColor("#008060"));
