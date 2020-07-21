@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sportsappnav">
+    package="com.example.footballpush">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.footballpush.MainActivity"
             android:label="FootballPush"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,11 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".aboutPage"
+        <activity android:name="com.example.footballpush.aboutPage"
             />
-        <activity android:name=".FAQpage"
+        <activity android:name="com.example.footballpush.FAQpage"
             />
-        <activity android:name=".contact"
+        <activity android:name="com.example.footballpush.contact"
             />
 
     </application>
