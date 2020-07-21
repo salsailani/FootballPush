@@ -96,10 +96,12 @@ public class MainActivity extends AppCompatActivity
 
      }
          else if (id == R.id.faq) {
-
+         Intent myIntent = new Intent(MainActivity.this, FAQpage.class);
+         MainActivity.this.startActivity(myIntent);
          }
-     else if (id == R.id.faq) {
-
+     else if (id == R.id.contact) {
+         Intent myIntent = new Intent(MainActivity.this, contact.class);
+         MainActivity.this.startActivity(myIntent);
      }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
