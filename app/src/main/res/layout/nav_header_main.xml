@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="392dp"
         android:layout_height="wrap_content"
         android:text="Fixtures pushed into your calendar"
         tools:text="Fixtures pushed into your calendar" />
