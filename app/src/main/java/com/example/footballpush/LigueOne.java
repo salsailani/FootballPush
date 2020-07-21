@@ -55,7 +55,7 @@ public class LigueOne extends Fragment {
     private void setPictures(View view) {
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1024px-Paris_Saint-Germain_F.C..svg.png").into((ImageView) view.findViewById(R.id.psg));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/SM_Caen_2016_logo.svg/1024px-SM_Caen_2016_logo.svg.png").into((ImageView) view.findViewById(R.id.caen));
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Girondins_de_Bordeaux.png/1024px-Girondins_de_Bordeaux.png").into((ImageView) view.findViewById(R.id.bordeaux));
+        Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/1/11/FC_Girondins_de_Bordeaux_logo.svg/1024px-FC_Girondins_de_Bordeaux_logo.svg.png").into((ImageView) view.findViewById(R.id.bordeaux));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Racing_Club_de_Strasbourg_logo.svg/1024px-Racing_Club_de_Strasbourg_logo.svg.png").into((ImageView) view.findViewById(R.id.strasbourg));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Olympique_Lyonnais.svg/1024px-Olympique_Lyonnais.svg.png").into((ImageView) view.findViewById(R.id.lyon));
         Picasso.get().load("https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Amiens_SC_Logo.svg/1024px-Amiens_SC_Logo.svg.png").into((ImageView) view.findViewById(R.id.amiens));
