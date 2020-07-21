@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sportsappnav">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.footballpush">
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/soccer"
+        android:icon="@drawable/soccer2"
         android:label="FootballPush"
-        android:roundIcon="@drawable/soccer"
+        android:roundIcon="@drawable/soccer2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-
+            android:name="com.example.footballpush.MainActivity"
             android:label="FootballPush"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,10 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.footballpush.aboutPage"
+            />
+        <activity android:name="com.example.footballpush.FAQpage"
+            />
+        <activity android:name="com.example.footballpush.contact"
+            />
 
-        <activity android:name=".addPage" > </activity>
-
-
-</application>
+    </application>
 
 </manifest>
