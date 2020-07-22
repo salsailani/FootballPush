@@ -17,13 +17,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 
 public class readCalendar {
     Set<Integer> IDList = new HashSet<>();
-    Set<String> displayNameList = new HashSet<String>();
+    Set<String> displayNameList = new LinkedHashSet<String>();
     Map< String, Integer> hmap;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
