@@ -8,11 +8,12 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="337dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="35dp"
         android:text="What matches will be pushed into my calendar?"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +21,11 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="377dp"
-        android:layout_height="95dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
         android:text="The app pulls all the matches that are already scheduled, which will be shown by the popup.
 Please Repush the fixtures if you know new matches are scheduled, for example, by the new season."
@@ -34,11 +36,12 @@ Please Repush the fixtures if you know new matches are scheduled, for example, b
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="343dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
         android:text="Why is my league/Nation not shown in the choices?"
         android:textStyle="bold"
 
@@ -47,14 +50,40 @@ Please Repush the fixtures if you know new matches are scheduled, for example, b
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="365dp"
-        android:layout_height="78dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
         android:text="Right now we have the top leagues/Nation by viewership, but rest assured we will be adding other leagues and nation."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Can I request/suggest a feature?"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Absolutely, we are always looking for ways to enhance our app. Please visit the contact page."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 </android.support.constraint.ConstraintLayout>
