@@ -10,8 +10,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +19,9 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 
 public class readCalendar {
     Set<Integer> IDList = new HashSet<>();

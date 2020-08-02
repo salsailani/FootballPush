@@ -2,19 +2,22 @@ package com.example.footballpush;
 
 import android.app.Dialog;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 
 public class SerieA extends Fragment {
@@ -105,6 +108,7 @@ public class SerieA extends Fragment {
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
+                        @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onClick(View v) {
                             fbDialogue.dismiss();

@@ -2,11 +2,12 @@ package com.example.footballpush;
 
 //package com.hmkcode.adapters;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 //import com.hmkcode.fragments.FirstFragment;
 //import com.hmkcode.fragments.SecondFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 

@@ -5,12 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
 import android.view.View;
-
+import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import androidx.annotation.RequiresApi;
 
 public class radioDialog {
 
