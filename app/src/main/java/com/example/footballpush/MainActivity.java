@@ -90,11 +90,7 @@ public class MainActivity extends AppCompatActivity
                     "Hey check out my app at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
-        } else if (id == R.id.about) {
-         Intent myIntent = new Intent(MainActivity.this, aboutPage.class);
-         MainActivity.this.startActivity(myIntent);
-
-     }
+        }
          else if (id == R.id.faq) {
          Intent myIntent = new Intent(MainActivity.this, FAQpage.class);
          MainActivity.this.startActivity(myIntent);

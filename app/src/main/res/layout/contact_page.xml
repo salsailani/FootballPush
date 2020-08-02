@@ -42,6 +42,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:text="sf.sailani@gmail.com"
+            android:autoLink="email"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>
@@ -85,6 +86,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:text="mohdelbadry@gmail.com"
+            android:autoLink="email"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>
