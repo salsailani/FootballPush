@@ -1,6 +1,8 @@
 package com.example.footballpush;
 
+import android.Manifest;
 import android.app.Dialog;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,9 +13,11 @@ import android.graphics.Color;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
@@ -48,6 +52,8 @@ public class PremierLeague extends Fragment {
         setSingleEvent(mainGrid);
 
 
+
+
         return view;
     }
 
@@ -79,8 +85,19 @@ public class PremierLeague extends Fragment {
                         @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onClick(View v) {
-                            fbDialogue.dismiss();
-                            radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
+                            String[] PERMISSIONS = {
+                                    Manifest.permission.READ_CALENDAR,
+                                    Manifest.permission.WRITE_CALENDAR,
+                            };
+
+                            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED ) {
+                                ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 1);
+                            }
+                            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED ){
+                                fbDialogue.dismiss();
+                                radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
+                            }
+
                         }
 
                     });

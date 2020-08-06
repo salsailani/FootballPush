@@ -49,6 +49,7 @@ public class radioDialog {
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Just dismiss the alert dialog after selection
                 // Or do something now
+
                 final calendarPush calendar = new calendarPush();
                 System.out.println(selectedItem);
                 int calendarID = read.hmap.get(selectedItem);

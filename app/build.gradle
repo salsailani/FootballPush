@@ -4,17 +4,24 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId 'com.football.footballpush'
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         useLibrary 'org.apache.http.legacy'
         multiDexEnabled true
 
     }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,6 +47,9 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.7.0")
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    implementation "io.reactivex.rxjava3:rxjava:3.x.y"
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
 
 
 }

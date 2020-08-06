@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +33,7 @@ public class readCalendar {
     public String[] read(Context ctx, ArrayList<String> resultArray) {
         TimeZone timezoneDefault = TimeZone.getDefault();
         String timezone = timezoneDefault.getID();
+/*
         String[] PERMISSIONS = {
                 Manifest.permission.READ_CALENDAR,
                 Manifest.permission.WRITE_CALENDAR,
@@ -48,6 +50,9 @@ public class readCalendar {
         if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
         }
+*/
+
+
 
 
         ContentResolver cr = ctx.getContentResolver();
