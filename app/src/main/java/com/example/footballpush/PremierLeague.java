@@ -15,6 +15,9 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
@@ -26,6 +29,8 @@ public class PremierLeague extends Fragment {
     GridLayout mainGrid;
     Integer teamID;
     TextView data;
+    private AdView mAdView;
+
 
     View view;
 
@@ -50,8 +55,6 @@ public class PremierLeague extends Fragment {
 
         //Set Event
         setSingleEvent(mainGrid);
-
-
 
 
         return view;
