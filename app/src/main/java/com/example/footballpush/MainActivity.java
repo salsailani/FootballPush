@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT,
-                    "Hey check out my app at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
+                    "Never miss a football match using FootballPush: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
         }

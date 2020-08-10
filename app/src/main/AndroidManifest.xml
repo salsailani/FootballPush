@@ -22,7 +22,7 @@
         <activity
             android:name="com.example.footballpush.MainActivity"
             android:label="FootballPush"
-            android:noHistory="true"
+            android:noHistory="false"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,8 +33,10 @@
         <activity android:name="com.example.footballpush.aboutPage"
             />
         <activity android:name="com.example.footballpush.FAQpage"
+            android:noHistory="false"
             />
         <activity android:name="com.example.footballpush.contact"
+            android:noHistory="false"
             />
 
     </application>

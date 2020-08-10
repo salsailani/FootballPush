@@ -11,4 +11,8 @@ public class contact extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_page);
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

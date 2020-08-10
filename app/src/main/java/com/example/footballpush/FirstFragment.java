@@ -74,9 +74,7 @@ public class FirstFragment extends Fragment {
                     case 6:
                         setFragment(majorLeagueSoccer);
                         break;
-                    case 7:
-                        setFragment(ligaMX);
-                        break;
+
                 }
             }
 

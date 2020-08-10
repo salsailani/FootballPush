@@ -10,4 +10,8 @@ public class FAQpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.faq_page);
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
