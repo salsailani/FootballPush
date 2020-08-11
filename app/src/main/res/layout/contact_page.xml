@@ -16,7 +16,7 @@
             android:layout_height="210dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:src="@drawable/saleh" />
+            android:src="@mipmap/saleh" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
             android:layout_height="198dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:src="@drawable/mo" />
+            android:src="@mipmap/mo" />
 
         <TextView
             android:layout_width="wrap_content"

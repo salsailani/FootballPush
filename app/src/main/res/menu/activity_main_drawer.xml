@@ -14,11 +14,11 @@
 
             <item
                 android:id="@+id/faq"
-                android:icon="@drawable/faq"
+                android:icon="@mipmap/faq"
                 android:title="FAQ" />
             <item
                 android:id="@+id/contact"
-                android:icon="@drawable/contactuslogo"
+                android:icon="@mipmap/contactuslogo"
                 android:title="Contact" />
         </menu>
     </item>

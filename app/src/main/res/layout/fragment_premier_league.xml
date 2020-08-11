@@ -50,7 +50,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/manutd" />
+                            android:src="@mipmap/manutd" />
 
 
                     </LinearLayout>
@@ -78,7 +78,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/liverpoolfc" />
+                            android:src="@mipmap/liverpoolfc" />
 
 
                     </LinearLayout>
@@ -109,7 +109,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/chelsea" />
+                            android:src="@mipmap/chelsea" />
 
 
                     </LinearLayout>
@@ -136,7 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/mancity" />
+                            android:src="@mipmap/mancity" />
 
 
                     </LinearLayout>
@@ -163,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/tottenham" />
+                            android:src="@mipmap/tottenham" />
 
 
                     </LinearLayout>
@@ -190,7 +190,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/arsenal" />
+                            android:src="@mipmap/arsenal" />
 
 
                     </LinearLayout>
@@ -217,7 +217,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/everton" />
+                            android:src="@mipmap/everton" />
 
 
                     </LinearLayout>
@@ -244,7 +244,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/wolves" />
+                            android:src="@mipmap/wolves" />
 
 
                     </LinearLayout>
@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/leicester" />
+                            android:src="@mipmap/leicester" />
 
 
                     </LinearLayout>
@@ -297,7 +297,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/watford" />
+                            android:src="@mipmap/watford" />
 
 
                     </LinearLayout>
@@ -323,7 +323,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/palace" />
+                            android:src="@mipmap/palace" />
 
 
                     </LinearLayout>
@@ -349,7 +349,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/burnley" />
+                            android:src="@mipmap/burnley" />
 
 
                     </LinearLayout>
@@ -375,7 +375,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/southampton" />
+                            android:src="@mipmap/southampton" />
 
 
                     </LinearLayout>
@@ -401,7 +401,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/newcastle" />
+                            android:src="@mipmap/newcastle" />
 
 
                     </LinearLayout>
@@ -427,7 +427,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/brighton" />
+                            android:src="@mipmap/brighton" />
 
 
                     </LinearLayout>
@@ -453,7 +453,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/westham" />
+                            android:src="@mipmap/westham" />
 
 
                     </LinearLayout>
@@ -479,7 +479,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/astonvilla" />
+                            android:src="@mipmap/astonvilla" />
 
 
                     </LinearLayout>
@@ -505,7 +505,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/sheffield" />
+                            android:src="@mipmap/sheffield" />
 
 
                     </LinearLayout>
@@ -531,7 +531,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/bournemouth" />
+                            android:src="@mipmap/bournemouth" />
 
 
                     </LinearLayout>
@@ -557,7 +557,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/norwich" />
+                            android:src="@mipmap/norwich" />
 
 
                     </LinearLayout>

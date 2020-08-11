@@ -28,7 +28,7 @@ clubs or nations next matches in the current season and push them into your loca
         app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:srcCompat="@drawable/faqlogo" />
+        app:srcCompat="@mipmap/faqlogo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -38,7 +38,7 @@ clubs or nations next matches in the current season and push them into your loca
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brandlogo" />
+        app:srcCompat="@mipmap/brandlogo" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -50,5 +50,5 @@ clubs or nations next matches in the current season and push them into your loca
         android:layout_marginTop="132dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/contactuslogo" />
+        app:srcCompat="@mipmap/contactuslogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
