@@ -13,8 +13,8 @@ android {
         applicationId 'com.football.footballpush'
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         useLibrary 'org.apache.http.legacy'
         multiDexEnabled true
