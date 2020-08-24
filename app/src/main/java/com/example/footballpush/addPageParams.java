@@ -41,6 +41,7 @@ import org.json.JSONObject;
         TimeZone timezoneDefault = TimeZone.getDefault();
         String timezone =  timezoneDefault.getID();
         TextView data;
+        String apiKey= BuildConfig.MyFootballAPIKey;
 
 
         @Override
@@ -59,7 +60,7 @@ import org.json.JSONObject;
                     .url(URL)
                     .get()
                     .addHeader("x-rapidapi-host", "api-football-v1.p.rapidapi.com")
-                    .addHeader("x-rapidapi-key", "9560035ce2msh757478739105ef3p16f2bdjsne73344650fc8")
+                    .addHeader("x-rapidapi-key", apiKey)
                     .build();
             try {
                 response = client.newCall(request).execute();

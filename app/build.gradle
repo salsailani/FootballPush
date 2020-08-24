@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 
 
 
+def apikeyPropertiesFile = rootProject.file("gradle.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 28
     compileOptions {
@@ -19,6 +23,8 @@ android {
         useLibrary 'org.apache.http.legacy'
         multiDexEnabled true
 
+        buildConfigField("String", "MyFootballAPIKey", apikeyProperties['MyFootballAPIKey'])
+        buildConfigField("String", "MyFootballAPIKey", apikeyProperties['MyFootballAPIKey'])
     }
 
 
@@ -28,7 +34,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+
+
 
 
 
