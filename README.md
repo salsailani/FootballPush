@@ -1,2 +1,2 @@
 # FootballPush
-Push your favorite football club, nation, league, or competetion fixtures into your google calendar.
+Push your favorite football club or nation fixtures into your google calendar.
