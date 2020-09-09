@@ -29,7 +29,7 @@ public class LaLiga extends Fragment {
     Integer teamID;
     TextView data;
     View view;
-    radioDialog radio = new radioDialog();
+    calendarDialog radio = new calendarDialog();
 
 
 
@@ -96,7 +96,7 @@ public class LaLiga extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View view) {
-                    final addPage addPage = new addPage();
+                    final viewNextFixtures viewNextFixtures = new viewNextFixtures();
                     final calendarPush calendar = new calendarPush();
                     int final2;
                     final2 = fetchData(finalI);
@@ -108,8 +108,8 @@ public class LaLiga extends Fragment {
                     fbDialogue.show();
                     fbDialogue.setCancelable(true);
                     fbDialogue.setCanceledOnTouchOutside(true);
-                    addPageParams params = new addPageParams(getContext(), final2, data);
-                    addPage.execute(params);
+                    viewNextFixturesParams params = new viewNextFixturesParams(getContext(), final2, data);
+                    viewNextFixtures.execute(params);
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
@@ -126,7 +126,7 @@ public class LaLiga extends Fragment {
                             }
                             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED ){
                                 fbDialogue.dismiss();
-                                radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
+                                radio.dialogCreate(getContext(), view, viewNextFixtures.returnResultArray(), viewNextFixtures.returnTimeStampArray(), viewNextFixtures.returnVenueArray());
                             }
 
                         }

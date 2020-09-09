@@ -33,25 +33,6 @@ public class readCalendar {
     public String[] read(Context ctx, ArrayList<String> resultArray) {
         TimeZone timezoneDefault = TimeZone.getDefault();
         String timezone = timezoneDefault.getID();
-/*
-        String[] PERMISSIONS = {
-                Manifest.permission.READ_CALENDAR,
-                Manifest.permission.WRITE_CALENDAR,
-        };
-
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
-        }
-
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
-        }
-
-        if (ActivityCompat.checkSelfPermission(ctx, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((Activity) ctx, PERMISSIONS, 1);
-        }
-*/
-
 
 
 

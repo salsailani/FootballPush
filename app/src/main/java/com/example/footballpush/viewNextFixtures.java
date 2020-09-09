@@ -16,18 +16,18 @@ import org.json.JSONObject;
 
 
 
-      class addPageParams{
+      class viewNextFixturesParams {
         Context  ctx;
         int teamID;
         TextView data;
-        addPageParams(Context ctx, int teamID, TextView data){
+        viewNextFixturesParams(Context ctx, int teamID, TextView data){
             this.ctx = ctx;
             this.teamID = teamID;
             this.data = data;
         }
     }
 
-     class addPage extends AsyncTask<addPageParams, Void, String> {
+     class viewNextFixtures extends AsyncTask<viewNextFixturesParams, Void, String> {
 
 
         String result;
@@ -45,7 +45,7 @@ import org.json.JSONObject;
 
 
         @Override
-        protected String doInBackground(addPageParams... params) {
+        protected String doInBackground(viewNextFixturesParams... params) {
 
             // getting the next matches
 

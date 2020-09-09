@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 import androidx.annotation.RequiresApi;
 
-public class radioDialog {
+public class calendarDialog {
 
     readCalendar read = new readCalendar();
-    final addPage addPage = new addPage();
+    final viewNextFixtures viewNextFixtures = new viewNextFixtures();
     //final calendarPush calendar = new calendarPush();
     String selectedItem;
 
@@ -23,13 +23,13 @@ public class radioDialog {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void dialogCreate(final Context activity, final View view, final ArrayList<String> results, final ArrayList<Integer> time, final ArrayList<String> venue ) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        //read.read(activity,addPage.returnResultArray());
+        //read.read(activity,viewNextFixtures.returnResultArray());
 
         // Set the alert dialog title
         builder.setTitle("Choose a calendar.");
 
         // Initializing an array of calendars
-        final String[] calendars = read.read(activity, addPage.returnResultArray());
+        final String[] calendars = read.read(activity, viewNextFixtures.returnResultArray());
 
         builder.setSingleChoiceItems(
                 calendars, // Items list

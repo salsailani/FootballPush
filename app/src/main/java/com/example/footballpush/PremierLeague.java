@@ -13,9 +13,7 @@ import android.graphics.Color;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import androidx.annotation.RequiresApi;
@@ -34,7 +32,7 @@ public class PremierLeague extends Fragment {
 
     View view;
 
-    radioDialog radio = new radioDialog();
+    calendarDialog radio = new calendarDialog();
     readCalendar read = new readCalendar();
 
 
@@ -71,7 +69,7 @@ public class PremierLeague extends Fragment {
                 @Override
                 public void onClick(final View view) {
                     final calendarPush calendar = new calendarPush();
-                    final addPage addPage = new addPage();
+                    final viewNextFixtures viewNextFixtures = new viewNextFixtures();
                     fetchData(finalI);
                     final Dialog fbDialogue = new Dialog(getContext());
                     fbDialogue.setContentView(R.layout.add_page);
@@ -80,8 +78,8 @@ public class PremierLeague extends Fragment {
                     fbDialogue.show();
                     fbDialogue.setCancelable(true);
                     fbDialogue.setCanceledOnTouchOutside(true);
-                    addPageParams params = new addPageParams(getContext(), finalI[0], data);
-                    addPage.execute(params);
+                    viewNextFixturesParams params = new viewNextFixturesParams(getContext(), finalI[0], data);
+                    viewNextFixtures.execute(params);
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
@@ -98,7 +96,7 @@ public class PremierLeague extends Fragment {
                             }
                             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED ){
                                 fbDialogue.dismiss();
-                                radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
+                                radio.dialogCreate(getContext(), view, viewNextFixtures.returnResultArray(), viewNextFixtures.returnTimeStampArray(), viewNextFixtures.returnVenueArray());
                             }
 
                         }

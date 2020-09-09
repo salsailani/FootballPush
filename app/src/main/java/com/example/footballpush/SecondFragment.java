@@ -1,7 +1,10 @@
 package com.example.footballpush;
 
+import android.Manifest;
 import android.app.Dialog;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +17,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
@@ -24,7 +29,7 @@ public class SecondFragment extends Fragment {
     Integer teamID;
     TextView data;
     View view;
-    radioDialog radio = new radioDialog();
+    calendarDialog radio = new calendarDialog();
 
 
 
@@ -103,7 +108,7 @@ public class SecondFragment extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View view) {
-                    final addPage addPage = new addPage();
+                    final viewNextFixtures viewNextFixtures = new viewNextFixtures();
                     final calendarPush calendar = new calendarPush();
                     int final2;
                     final2 = fetchData(finalI);
@@ -115,15 +120,27 @@ public class SecondFragment extends Fragment {
                     fbDialogue.show();
                     fbDialogue.setCancelable(true);
                     fbDialogue.setCanceledOnTouchOutside(true);
-                    addPageParams params = new addPageParams(getContext(), final2, data);
-                    addPage.execute(params);
+                    viewNextFixturesParams params = new viewNextFixturesParams(getContext(), final2, data);
+                    viewNextFixtures.execute(params);
                     Button btnsubmit = (Button) fbDialogue.findViewById(R.id.btn_submit);
                     btnsubmit.setOnClickListener(new View.OnClickListener() {
 
+                        @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onClick(View v) {
-                            fbDialogue.dismiss();
-                            radio.dialogCreate(getContext(), view, addPage.returnResultArray(), addPage.returnTimeStampArray(), addPage.returnVenueArray());
+                            String[] PERMISSIONS = {
+                                    Manifest.permission.READ_CALENDAR,
+                                    Manifest.permission.WRITE_CALENDAR,
+                            };
+
+                            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED ) {
+                                ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 1);
+                            }
+                            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED ){
+                                fbDialogue.dismiss();
+                                radio.dialogCreate(getContext(), view, viewNextFixtures.returnResultArray(), viewNextFixtures.returnTimeStampArray(), viewNextFixtures.returnVenueArray());
+                            }
+
                         }
                     });
                 }
