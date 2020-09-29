@@ -11,7 +11,7 @@
 
         android:allowBackup="true"
         android:icon="@drawable/soccer2"
-        android:label="FootballPush"
+        android:label="FootballSync"
         android:roundIcon="@drawable/soccer2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

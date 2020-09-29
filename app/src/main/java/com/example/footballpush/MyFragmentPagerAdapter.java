@@ -3,7 +3,7 @@ package com.example.footballpush;
 //package com.hmkcode.adapters;
 
 //import com.hmkcode.fragments.FirstFragment;
-//import com.hmkcode.fragments.SecondFragment;
+//import com.hmkcode.fragments.NationalTeams;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -22,7 +22,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new FirstFragment();
             case 1:
-                return new SecondFragment();
+                return new NationalTeams();
             default:
                 return null;
         }

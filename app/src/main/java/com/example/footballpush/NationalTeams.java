@@ -23,7 +23,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
-public class SecondFragment extends Fragment {
+public class NationalTeams extends Fragment {
 
     GridLayout mainGrid;
     Integer teamID;

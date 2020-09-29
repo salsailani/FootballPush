@@ -14,11 +14,11 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.football.footballpush'
+        applicationId 'com.football.footballSync'
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 7
-        versionName "1.6"
+        versionCode 8
+        versionName "1.7"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         useLibrary 'org.apache.http.legacy'
         multiDexEnabled true
