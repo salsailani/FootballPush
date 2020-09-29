@@ -21,7 +21,7 @@
 
         <activity
             android:name="com.example.footballpush.MainActivity"
-            android:label="FootballPush"
+            android:label="FootballSync"
             android:noHistory="false"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
