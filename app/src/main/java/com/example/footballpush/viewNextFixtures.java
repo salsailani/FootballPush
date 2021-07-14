@@ -15,19 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
-      class viewNextFixturesParams {
-        Context  ctx;
-        int teamID;
-        TextView data;
-        viewNextFixturesParams(Context ctx, int teamID, TextView data){
-            this.ctx = ctx;
-            this.teamID = teamID;
-            this.data = data;
-        }
-    }
-
-     class viewNextFixtures extends AsyncTask<viewNextFixturesParams, Void, String> {
+public class viewNextFixtures extends AsyncTask<viewNextFixturesParams, Void, String> {
 
 
         String result;

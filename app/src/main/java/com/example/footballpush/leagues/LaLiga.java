@@ -1,4 +1,4 @@
-package com.example.footballpush;
+package com.example.footballpush.leagues;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -15,6 +15,11 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.footballpush.R;
+import com.example.footballpush.calendarDialog;
+import com.example.footballpush.calendarPush;
+import com.example.footballpush.viewNextFixtures;
+import com.example.footballpush.viewNextFixturesParams;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.RequiresApi;

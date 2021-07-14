@@ -7,6 +7,14 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
+import com.example.footballpush.leagues.Bundesliga;
+import com.example.footballpush.leagues.Eredivisie;
+import com.example.footballpush.leagues.LaLiga;
+import com.example.footballpush.leagues.LigaMX;
+import com.example.footballpush.leagues.LigueOne;
+import com.example.footballpush.leagues.MajorLeagueSoccer;
+import com.example.footballpush.leagues.SerieA;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 

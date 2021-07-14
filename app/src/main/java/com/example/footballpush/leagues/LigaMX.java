@@ -1,9 +1,11 @@
-package com.example.footballpush;
+package com.example.footballpush.leagues;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.footballpush.R;
 
 import androidx.fragment.app.Fragment;
 

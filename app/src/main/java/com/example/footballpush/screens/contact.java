@@ -1,6 +1,8 @@
-package com.example.footballpush;
+package com.example.footballpush.screens;
 
 import android.os.Bundle;
+
+import com.example.footballpush.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

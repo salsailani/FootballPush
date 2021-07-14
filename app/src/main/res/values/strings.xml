@@ -16,6 +16,8 @@
         <item>Major League Soccer</item>
     </string-array>
 
+    <string name="france">"https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1024px-Flag_of_France.svg.png"</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_add_page_nation">addPageNation</string>

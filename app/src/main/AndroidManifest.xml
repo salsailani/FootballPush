@@ -30,12 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.footballpush.aboutPage"
+        <activity android:name="com.example.footballpush.screens.aboutPage"
             />
-        <activity android:name="com.example.footballpush.FAQpage"
+        <activity android:name="com.example.footballpush.screens.FAQpage"
             android:noHistory="false"
             />
-        <activity android:name="com.example.footballpush.contact"
+        <activity android:name="com.example.footballpush.screens.contact"
             android:noHistory="false"
             />
 

@@ -1,9 +1,11 @@
-package com.example.footballpush;
+package com.example.footballpush.screens;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.footballpush.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +30,7 @@ public class aboutPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(aboutPage.this, contact.class));
+                startActivity(new Intent(aboutPage.this, com.example.footballpush.screens.contact.class));
             }
 
         });
